@@ -1,13 +1,17 @@
 {
+{
   "name": "kick-it-quit-web",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ingramjam.github.io/kick-it-quit-app", // <-- ADD THIS LINE
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build", // <-- ADD THIS LINE
+    "deploy": "gh-pages -d dist"   // <-- ADD THIS LINE
   },
   "dependencies": {
     "react": "^19.1.1",
